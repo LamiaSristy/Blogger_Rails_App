@@ -11,6 +11,13 @@
 
 <h3>Comments (<%= @article.comments.size %>)</h3>
 
+<p>
+  Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
 
